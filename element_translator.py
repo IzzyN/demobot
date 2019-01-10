@@ -14,7 +14,7 @@ trans_message = []
 
 #message = input('Message: ').lower()
 
-def element_finder(message):
+def element_finder(message, letter_element=letter_element):
 	result = []
 	for e in letter_element:
 		if message.startswith(e):

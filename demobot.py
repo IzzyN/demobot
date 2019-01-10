@@ -1,16 +1,16 @@
 from flask import Flask, request
 app = Flask(__name__)
 
-@app.route('/greet')
+@app.route('/greet', methods=['GET', 'POST'])
 def greet_person():
     name = request.values.get('text')
     return f'hi {name}!'
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     return('Hello, World!')
 
-@app.route('/weather')
+@app.route('/weather', methods=['GET', 'POST'])
 def check_weather():
     temp = request.values.get('temp')
     temp = int(temp)

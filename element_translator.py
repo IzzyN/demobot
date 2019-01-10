@@ -18,30 +18,31 @@ def element_finder(message, letter_element=letter_element):
 	result = []
 
     if not message:
-        return 'Incorrect input.'
-    
-	for e in letter_element:
-		if message.startswith(e):
-			#print(letter_element[e])
-			#result.append(letter_element[e])
-			remainder = message[len(e):]
-			if remainder == '':
-				return [[letter_element[e]]]
+        result = 'Incorrect input.'
 
-			for i in element_finder(remainder):
-				i.insert(0, letter_element[e])
-				#print(i)
-				result.append(i)
+    else:
+        for e in letter_element:
+            if message.startswith(e):
+                #print(letter_element[e])
+                #result.append(letter_element[e])
+                remainder = message[len(e):]
+                if remainder == '':
+                    return [[letter_element[e]]]
 
-	if result == []:
-		remainder = message[1:]
-		if not remainder:
-			return[[message[0].upper()]]
-		for i in element_finder(remainder):
-			#print(i)
-			i.insert(0, message[0].upper())
-			result.append(i)
-		#print(result)
+                for i in element_finder(remainder):
+                    i.insert(0, letter_element[e])
+                    #print(i)
+                    result.append(i)
+
+        if result == []:
+            remainder = message[1:]
+            if not remainder:
+                return[[message[0].upper()]]
+            for i in element_finder(remainder):
+                #print(i)
+                i.insert(0, message[0].upper())
+                result.append(i)
+            #print(result)
 	return result
 
 def element_translate(message):

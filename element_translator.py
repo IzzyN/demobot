@@ -12,7 +12,7 @@ csvfile.close()
 
 trans_message = []
 
-message = input('Message: ').lower()
+#message = input('Message: ').lower()
 
 def element_finder(message):
 	result = []

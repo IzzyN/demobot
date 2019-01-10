@@ -16,6 +16,8 @@ trans_message = []
 
 def element_finder(message, letter_element=letter_element):
 	result = []
+    if not message:
+        return 'Incorrect input.'
 	for e in letter_element:
 		if message.startswith(e):
 			#print(letter_element[e])

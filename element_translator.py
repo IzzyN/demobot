@@ -15,7 +15,7 @@ trans_message = []
 #message = input('Message: ').lower()
 
 def element_finder(message, letter_element=letter_element):
-	result = []
+    result = []
 
     if not message:
         result = 'Incorrect input.'
@@ -43,7 +43,7 @@ def element_finder(message, letter_element=letter_element):
                 i.insert(0, message[0].upper())
                 result.append(i)
             #print(result)
-	return result
+    return result
 
 def element_translate(message):
     options = element_finder(message)

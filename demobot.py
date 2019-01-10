@@ -10,5 +10,14 @@ def greet_person():
 def hello_world():
     return('Hello, World!')
 
+@app.route('/weather')
+def check_weather():
+    temp = request.values.get('temp')
+    temp = int(temp)
+    if temp > 30:
+        return "It's so hot!"
+    else:
+        return(f'The temperature is {temp}')
+
 if __name__ == '__main__':
     app.run()

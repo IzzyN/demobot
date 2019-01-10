@@ -1,5 +1,14 @@
 from flask import Flask, request
+
+from element_translator import element_finder
+
 app = Flask(__name__)
+
+@app.route('/element', methods=['GET', 'POST'])
+def element():
+    message = request.form.get('message')
+    translated = element_translator(message)
+    return translated
 
 @app.route('/greet', methods=['GET', 'POST'])
 def greet_person():

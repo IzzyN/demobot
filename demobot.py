@@ -1,6 +1,6 @@
 from flask import Flask, request
 
-from element_translator import element_finder, element_translate
+from element_translator import element_translate
 
 app = Flask(__name__)
 

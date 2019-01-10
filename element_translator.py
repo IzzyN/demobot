@@ -40,13 +40,13 @@ def element_finder(message):
 		#print(result)
 	return result
 
+def element_translate(message):
+    options = element_finder(message)
 
-options = element_finder(message)
+    last_op = 0
+    for op in options:
+        if last_op == 0 or len(op) < len(last_op):
+            last_op = op
 
-last_op = 0
-for op in options:
-	if last_op == 0 or len(op) < len(last_op):
-		last_op = op
-
-#print(options)
-print(''.join(last_op))
+    #print(options)
+    return ''.join(last_op)

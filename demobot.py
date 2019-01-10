@@ -1,13 +1,13 @@
 from flask import Flask, request
 
-from element_translator import element_finder
+from element_translator import element_finder, element_translate
 
 app = Flask(__name__)
 
 @app.route('/element', methods=['GET', 'POST'])
 def element():
-    message = request.form.get('message')
-    translated = element_translator(message)
+    message = request.values.get('message')
+    translated = element_translate(message)
     return translated
 
 @app.route('/greet', methods=['GET', 'POST'])
